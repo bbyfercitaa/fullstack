@@ -1,0 +1,179 @@
+.mega-offer-section {
+  background-color: #FFB347;
+  padding: 1rem 0;
+  margin-top: 1rem;
+  overflow: hidden;
+  position: relative;
+}
+
+@keyframes slideShow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);  /* Mover un conjunto completo */
+  }
+}
+
+.mega-offer-slider {
+  display: flex;
+  width: 200%;  /* 2 conjuntos completos de slides */
+  animation: slideShow 20s linear infinite;
+}
+
+.mega-offer-slider:hover {
+  animation-play-state: paused;  /* Pausa la animación al pasar el mouse */
+}
+
+.mega-offer-slide {
+  width: calc(100% / 6);
+  flex-shrink: 0;
+  padding: 1rem 3rem;
+  box-sizing: border-box;
+  border-right: 3px solid rgba(255, 255, 255, 0.3);
+  margin: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 200px;  /* Reducida la altura mínima */
+}
+
+.mega-offer-content {
+  display: flex;
+  flex-direction: column;  /* Cambiado a columna para apilar elementos */
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 2rem;  /* Espacio entre elementos */
+  text-align: center;
+}
+
+/* Estilo para el 50% OFF */
+.offer-left {
+  flex: 1;
+}
+
+.percentage-off {
+  display: flex;
+  align-items: flex-start;
+  color: #FF4444;
+  font-weight: bold;
+  transform: rotate(-10deg);
+}
+
+.number {
+  font-size: 6rem;
+  line-height: 1;
+}
+
+.off-text {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.5rem;
+}
+
+.percent {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.off {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+/* Estilo para MEGA OFERTA */
+.offer-center {
+  flex: 1;
+  text-align: center;
+}
+
+.mega-text {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #FF4444;
+  line-height: 1;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 2;
+}
+
+.offer-text {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #FF4444;
+  line-height: 1;
+  margin: 0.3rem 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Estilo para el texto descriptivo */
+.offer-right {
+  flex: 1;
+  text-align: right;
+}
+
+.description {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.4;
+  margin: 1rem 0 0 0;
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+  width: 100%;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsive design */
+@media (max-width: 991px) {
+  .mega-offer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .offer-left, .offer-right {
+    text-align: center;
+  }
+
+  .percentage-off {
+    justify-content: center;
+    transform: rotate(0);
+  }
+
+  .mega-text {
+    font-size: 4rem;
+  }
+
+  .oferta-text {
+    font-size: 3rem;
+  }
+
+  .description {
+    font-size: 1.2rem;
+  }
+}
+
+/* Animaciones */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.percentage-off {
+  animation: pulse 2s infinite;
+}
